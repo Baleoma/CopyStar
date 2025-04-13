@@ -12,16 +12,16 @@
 
         <div class="album">
             <div class="row row-cols-5">
-                @for($i = 0; $i < 5; $i++)
+                @foreach($products as $product)
                     <div class="col">
-                        <div class="card shadow-sm">
-                            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+                        <div class="card shadow-sm bg-black text-bg-dark">
+                            <img class="card-img-top" src="images/{{ $product->photo }}" alt="Картинка товара" style="width: 100%; height: 300px; object-fit: cover; background: #6c757d;">
                             <div class="card-body">
-                                <p class="card-text">Название товара</p>
+                                <p class="card-text">{{ $product->name }}</p>
                             </div>
                         </div>
                     </div>
-                @endfor
+                @endforeach
             </div>
         </div>
     </main>
