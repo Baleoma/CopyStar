@@ -22,8 +22,8 @@
             </ul>
 
             <div class="text-end">
-                <button type="button" class="btn btn-outline-light me-2">Войти</button>
-                <button type="button" class="btn btn-warning">Регистрация</button>
+                <a class="btn btn-outline-light me-2" href="/login">Войти</a>
+                <a class="btn btn-warning" href="/register">Регистрация</a>
             </div>
         </div>
     </div>
