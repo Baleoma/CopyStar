@@ -21,10 +21,21 @@
                 <li><a href="/where" class="nav-link px-2 text-white">Где нас найти</a></li>
             </ul>
 
-            <div class="text-end">
-                <a class="btn btn-outline-light me-2" href="/login">Войти</a>
-                <a class="btn btn-warning" href="/register">Регистрация</a>
-            </div>
+            @auth()
+                <div class="text-end">
+                    <a class="btn btn-warning" href="/cart">Корзина</a>
+                    <form method="POST" action="{{ url('logout') }}" class="btn me-2">
+                        @csrf
+                        <button type="submit" class="btn btn-outline-light">Выйти</button>
+                    </form>
+                    <span class="me-2 text-white" href="/login">{{ Auth::user()->login }}</span>
+                </div>
+            @else
+                <div class="text-end">
+                    <a class="btn btn-outline-light me-2" href="/login">Войти</a>
+                    <a class="btn btn-warning" href="/register">Регистрация</a>
+                </div>
+            @endauth
         </div>
     </div>
 </header>

@@ -62,4 +62,9 @@ class AuthController extends Controller
             'login' => 'Неверный логин или пароль',
         ])->onlyInput('login');
     }
+
+    public function logout(Request $request){
+        Auth::logout();
+        return redirect()->intended('/');
+    }
 }
