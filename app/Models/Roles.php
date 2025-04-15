@@ -13,7 +13,7 @@ class Roles extends Model
     /** @use HasFactory<\Database\Factories\RolesFactory> */
     use HasFactory;
 
-    public function users(){
+    public function user(){
         return $this->belongsToMany(User::class, 'role_id');
     }
 }

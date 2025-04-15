@@ -15,4 +15,6 @@ Route::get('/where', function () {
 });
 
 Route::get('/register', [AuthController::class, 'registerindex']);
+Route::post('/register', [AuthController::class, 'register']);
 Route::get('/login', [AuthController::class, 'loginindex']);
+Route::post('/login', [AuthController::class, 'login']);
