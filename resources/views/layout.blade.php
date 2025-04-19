@@ -24,11 +24,17 @@
             @auth()
                 <div class="text-end">
                     <a class="btn btn-warning" href="/cart">Корзина</a>
+
+                    <!-- Новая кнопка админ-панели -->
+                    @if(Auth::user()->role_id === 1)
+                        <a class="btn btn-danger mx-2" href="/admin">Админ-панель</a>
+                    @endif
+
                     <form method="POST" action="{{ url('logout') }}" class="btn me-2">
                         @csrf
                         <button type="submit" class="btn btn-outline-light">Выйти</button>
                     </form>
-                    <span class="me-2 text-white" href="/login">{{ Auth::user()->login }}</span>
+                    <span class="me-2 text-white">{{ Auth::user()->login }}</span>
                 </div>
             @else
                 <div class="text-end">

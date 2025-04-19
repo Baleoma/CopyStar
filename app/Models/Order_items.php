@@ -11,4 +11,16 @@ class Order_items extends Model
 
     /** @use HasFactory<\Database\Factories\OrderItemsFactory> */
     use HasFactory;
+
+    // Отношение к заказу
+    public function order()
+    {
+        return $this->belongsTo(Orders::class);
+    }
+
+    // Отношение к товару
+    public function product()
+    {
+        return $this->belongsTo(Products::class);
+    }
 }

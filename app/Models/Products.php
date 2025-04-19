@@ -12,8 +12,13 @@ class Products extends Model
     /** @use HasFactory<\Database\Factories\ProductsFactory> */
     use HasFactory;
 
+    public function category()
+    {
+        return $this->belongsTo(Categories::class);
+    }
+
     public function cart(){
-        return $this->hasMany(Cart::class, 'product_id');
+        return $this->hasMany(Carts::class, 'product_id');
     }
 
     public function order_items(){
